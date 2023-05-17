@@ -1,6 +1,6 @@
 # memory-game
 
-Live at: 
+Live at: https://trustinmagic.github.io/memory-game/
 
 Simple Memory Card game created in React.
 
