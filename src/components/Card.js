@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
-import cardsArr from '../data-structures';
-import { shuffleArray } from '../utils';
 
-function Card({ name, url, setScore, setGameOver, setCards }) {
+function Card({ name, url, handleCorrect, handleIncorrect }) {
   const [clicks, setClicks] = useState(0);
 
   const handleClick = () => {
+    setClicks((prevClicks) => prevClicks + 1);
+    
     if (clicks === 0) {
-      const newCards = shuffleArray(cardsArr);
-
-      setCards(newCards);
-      setScore((prevScore) => prevScore + 1);
-      setClicks((prevClicks) => prevClicks + 1);
+      handleCorrect();
     } else {
-      const newCards = shuffleArray(cardsArr);
-      setCards(newCards);
-      setGameOver(true);
+      handleIncorrect();
     }
   };
 

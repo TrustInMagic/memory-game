@@ -1,26 +1,31 @@
 import React, { useState } from 'react';
 import Card from './components/Card';
 import cardsArr from './data-structures';
+import { shuffleArray } from './utils.js';
 import './styles/App.css';
 
 function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const [gameOver, setGameOver] = useState(false);
   const [key, setKey] = useState(0);
-  const [cards, setCards] = useState(cardsArr)  
+  const [cards, setCards] = useState(cardsArr);
 
   const resetGame = () => {
     setScore(0);
     setKey((prevKey) => prevKey + 1);
-    setGameOver(false);
   };
-  
 
-  if (gameOver) {
+
+  const handleCorrect = () => {
+    const newCards = shuffleArray(cardsArr);
+    setCards(newCards);
+    setScore((prevScore) => prevScore + 1)
+  };
+
+  const handleIncorrect = () => {
     score > bestScore ? setBestScore(score) : setBestScore(bestScore);
     resetGame();
-  }
+  };
 
   return (
     <div className='App'>
@@ -42,10 +47,8 @@ function App() {
             name={card.name}
             url={card.url}
             key={card.name + key}
-            setScore={setScore}
-            setGameOver={setGameOver}
-            resetGame={resetGame}
-            setCards={setCards}
+            handleCorrect={handleCorrect}
+            handleIncorrect={handleIncorrect}
           />
         ))}
       </div>
