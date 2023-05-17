@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/memory-game/static/css/main.6172e116.css",
+    "main.js": "/memory-game/static/js/main.86223dbb.js",
+    "static/media/sc-wallpaper.jpg": "/memory-game/static/media/sc-wallpaper.74855183c5760208b5dc.jpg",
+    "static/media/Starcraft Normal.ttf": "/memory-game/static/media/Starcraft Normal.6b2e351fe74f0cc1d30b.ttf",
+    "index.html": "/memory-game/index.html",
+    "main.6172e116.css.map": "/memory-game/static/css/main.6172e116.css.map",
+    "main.86223dbb.js.map": "/memory-game/static/js/main.86223dbb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6172e116.css",
+    "static/js/main.86223dbb.js"
+  ]
+}
