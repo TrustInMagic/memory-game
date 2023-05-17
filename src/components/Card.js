@@ -7,12 +7,14 @@ function Card({ name, url, setScore, setGameOver, setCards }) {
 
   const handleClick = () => {
     if (clicks === 0) {
-      const newCards = shuffleArray(cardsArr)
+      const newCards = shuffleArray(cardsArr);
 
-      setCards(newCards)
+      setCards(newCards);
       setScore((prevScore) => prevScore + 1);
       setClicks((prevClicks) => prevClicks + 1);
     } else {
+      const newCards = shuffleArray(cardsArr);
+      setCards(newCards);
       setGameOver(true);
     }
   };
@@ -21,7 +23,6 @@ function Card({ name, url, setScore, setGameOver, setCards }) {
     <div className='card' onClick={handleClick}>
       <img src={url} alt='' />
       <div className='card-name'>{name}</div>
-      <div>Clicks: {clicks}</div>
     </div>
   );
 }

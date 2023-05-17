@@ -20,10 +20,6 @@ const cardsArr = [
     url: './assets/characters/Dehaka.webp',
   },
   {
-    name: 'Gabriel Tosh',
-    url: './assets/characters/Gabriel Tosh.webp',
-  },
-  {
     name: 'Horace Warfield',
     url: './assets/characters/Horace Warfield.webp',
   },
